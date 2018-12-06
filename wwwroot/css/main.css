@@ -1,0 +1,624 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#areaComentario {
+    height: 30px;
+    transition: height .2s;
+}
+
+#areaComentario:focus {
+    height: 100px;
+}   
+header {
+    background: url(/imagens/apple-designer-designing-7353.jpg) no-repeat;
+    background-size: 100%;
+    height: 600px;
+    color: ghostwhite;
+    text-align: center;
+}
+
+.logo img {
+    width: 4.5rem;
+}
+
+.logo {
+    width: 25%;
+    padding: 3rem;
+}
+
+.top-bar {
+    display: flex;
+    height: 100%;
+}
+
+.toogle {
+    color: black;
+    font-size: 2em;
+    height: 2em;
+    padding: .5em;
+    /* background: white; */
+    text-align: right;
+    display: none;
+}
+
+.menu {
+    height: 2.5rem;
+    margin: 3rem;
+    display: flex;
+}
+
+.menu ul {
+    display: flex;
+    background-color: royalblue;
+    /* text-transform: uppercase; */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.menu li {
+    padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.menu li a:hover {
+    color: rgb(89, 185, 240);
+    text-shadow: 0px 3px 3px rgb(89, 185, 240);
+}
+
+.txt h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.txt h2 {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.bttn {
+    display: flex;
+    padding: 5rem 2rem 2rem 56rem;
+}
+
+.bttn a {
+    text-decoration: none;
+}
+
+.bttn p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: ghostwhite;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.bt1 {
+    width: 7rem;
+    height: 2rem;
+    background-color: rgb(89, 185, 240);
+    border-radius: 0.5rem;
+    margin-right: .5rem;
+    
+}
+.bt1 a{
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: ghostwhite;
+    font-size: 1.1rem;
+    text-decoration: none;
+    
+}
+
+.bt2 {
+    width: 10rem;
+    height: 2rem;
+    background-color: royalblue;
+    border-radius: 0.5rem;
+}
+.bt2 a{
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: ghostwhite;
+    font-size: 1.1rem;
+    text-decoration: none;}
+
+.bt1 a:hover {
+    text-shadow: 0 3px 3px royalblue;
+}
+
+.bt2 a:hover {
+    text-shadow: 0 3px 3px rgb(31, 14, 179);
+}
+
+#modal-Login .iziModal-header{
+    background-color:rgb(89, 185, 240) !important;
+}
+#modal-Login{
+    background-color: white;
+}
+#modal-Cadastrar .iziModal-header{
+background-color: royalblue !important;
+}
+.campos-Login{
+    height: 30vh;
+}
+.campos-cadastrar{
+    height: 30vh;
+}
+.md-cadastrar{ display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.md-cadastrar input{
+    width: 60%;
+       border:none;
+       border-bottom: solid 1px rgba(155, 152, 152, 0.74) ;
+       margin-top: 4vw;
+       font-size: .85rem;
+   }
+.lgn-cadastrar{
+    margin: 1vw;
+    text-align: center;
+    height: 6vw;
+}
+.lgn-cadastrar a{
+    border: none;
+    
+    text-decoration: none;
+    width: 6rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    background-color:  royalblue;
+    text-align: center;
+    padding: 6px 12px 6px 12px;
+    font-size: 1vw;
+    color:white;
+    text-transform: uppercase;
+    
+}
+               
+.lgn-cadastrar button{
+   
+    border: none;
+    margin-top: 3vw;
+}
+
+.campos{
+    height: 30vh;
+}
+.md{
+    display: flex;
+   flex-direction: column;
+   align-items: center;}
+
+    
+   .md input{
+       width: 60%;
+       border:none;
+       border-bottom: solid 1px rgba(155, 152, 152, 0.74) ;
+       margin-top: 4vw;
+       font-size: .85rem;
+   }
+    
+
+.lgn{
+    margin: 1vw;
+    text-align: center;
+    height: 6vw;
+}
+.lgn a{
+
+    border: none;
+    color: whitesmoke;
+    text-decoration: none;
+    width: 6rem;
+    height: 1.5rem;
+    border-radius: 5px;
+    background-color:  rgb(89, 185, 240);
+    text-align: center;
+    padding: 6px 12px 6px 12px;
+    font-size: 1vw;
+    text-transform: uppercase;
+
+}
+.lgn button{
+    border: none;
+    margin-top: 3vw;
+    
+}
+.link{
+    margin: 1vh;
+}
+.link a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: .7rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+.link p{ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: .7rem;
+
+}
+.cn{
+    background-color:  whitesmoke;
+}
+.gradientecomentario{
+
+}
+.linha{
+ background: url(/imagens/backcomentario.jpeg)no-repeat;
+ background-size: 100%;
+}
+#comments a:hover {
+    color: rgb(185, 184, 184);
+    text-shadow: 0px 3px 3px rgb(19, 48, 146);
+}
+main {
+    background-color: whitesmoke;
+}
+
+.sector1 {
+    display: flex;
+    padding: 3rem 0 0 0;
+    /* align-items: center; */
+}
+main .img{
+    flex: 3;
+}
+main .img img {
+    
+    width: 100%;
+    padding: 2rem;
+ 
+}
+
+.img {
+    width: 80%;
+}
+main .txt1{
+    flex:4; 
+}
+
+.txt1 h3 {
+    font-size: 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 2rem;
+}
+
+.txt1 p {
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 1rem;
+}
+
+.sector2 {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 3rem 0;
+}
+
+.one {
+    background-color: rgb(146, 8, 8);
+    width: 33%;
+    height: 15rem;
+}
+
+.two {
+    background-color: rgb(255, 0, 0);
+    width: 34%;
+    height: 15rem;
+}
+
+.three {
+    background-color: rgb(210, 57, 57);
+    width: 33%;
+    height: 15rem;
+}
+
+.sector2 h4 {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.sector2 p {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.sector3 h3 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.sector3 p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 8rem;
+}
+
+.sector4 {
+    background-image: url(/imagens/software.jpg);
+    background-size: 100%;
+    background-position: center;
+    width: 100%;
+    height: 20rem;
+    margin-top: 6rem;
+}
+
+.grd {
+    background-image: linear-gradient( to right, rgba(0, 0, 0, .2), rgba(5, 0, 0, 0.4));
+    width: 100%;
+    height: 100%;
+}
+
+.txt4 h4 {
+    font-size: 2rem;
+    color: white;
+    padding: 3rem;
+    text-align: center;
+}
+
+.txt4 p {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 8rem;
+}
+
+.txt4 span {
+    color: rgb(103, 103, 247);
+}
+
+hr {
+    border: 0rem solid;
+    margin: 2rem 0;
+}
+
+.pln {
+    border-radius: .5rem;
+    height: 3.5rem;
+    width: 100%;
+    margin: 2rem 0;
+    background-color: rgb(50, 50, 50);
+    border: 2px solid;
+}
+
+.pln a {
+    text-decoration: none;
+    color: white;
+}
+
+.pln p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.pln a:hover {
+    text-shadow: 0 3px 3px black;
+    color: royalblue;
+}
+
+.sector5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.prc img {
+    height: 13rem;
+    margin: 2rem;
+}
+
+.other img {
+    width: 13rem;
+    margin: 1rem;
+}
+
+.other {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.other h5 {
+    font-weight: 400;
+    font-size: 1rem;
+}
+.linha{
+    margin-top: 3rem;
+    margin-bottom: 3em;
+}
+.linha hr{
+    border: rgba(34, 34, 34, 0.664) solid 1px;
+    margin-top: 2vh;
+}
+.gradientecomentario {
+    background-image: linear-gradient( to right, rgba(135, 183, 231, 0.747), rgba(78, 106, 230, 0.4));
+    width: 100%;
+    height: 100%;
+}
+
+#comments{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+#comments p{
+        margin:8vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+        color: rgba(121, 118, 118, 0.705);
+}
+#comments textarea{
+    width: 50vw;
+    border: none;
+    background-color: rgba(218, 218, 219, 0.185);
+   
+   
+}
+#comments h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    color: white;
+    
+}
+#comments button{
+    border: 1px blue solid;
+    border-radius: 5px;
+    background-color: rgba(70, 70, 223, 0.856);
+    text-align: center;
+    width: 10vw;
+    height: 2rem;
+    margin: 5vh;
+}
+
+#comments a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.911);
+    font-size: 1rem;    
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}
+footer {
+    width: 100%;
+    background-color: #222;
+    height: 100%;
+    display: flex;
+}
+
+.ft1 img {
+    width: 17rem;
+    height: 90%;
+    margin: 0.6rem;
+}
+
+.ft2 img {
+    width: 3rem;
+    margin: 1.5rem 3rem;
+}
+
+.info {
+    display: flex;
+}
+
+.info h5 {
+    color: rgb(175, 169, 169);
+    font-size: 1.2rem;
+    padding: 1rem 0 0.5rem 0;
+}
+
+.redes li {
+    margin: 1rem 0;
+}
+
+.redes a {
+    font-weight: 900;
+    color: black;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.redes {
+    text-align: initial;
+    padding: 0 3rem;
+}
+
+.redes a:hover {
+    color: white;
+    transition-delay: .085s;
+}
+
+.maps {
+    text-align: center;
+    margin-left: 5rem;
+}
+
+.ctt {
+    flex-direction: column;
+    display: flex;
+    padding: 0 3rem;
+}
+
+.ctt p {
+    font-weight: 800;
+}
+
+.ctt p:hover {
+    color: whitesmoke;
+}
+
+.redes li i {
+    font-size: 1.2em;
+    width: 1.5em;
+    display: inline-block;
+    color: azure;
+}
+.active{
+    display: flex;
+    flex-direction: column;
+    
+}
+@media screen and (max-width: 1160px) {
+    .top-bar {
+        flex-direction: column;
+    }
+    .grd{
+        background-image: linear-gradient( to right, rgba(0, 0, 0, .2), rgba(5, 0, 0, 0.4));
+        width: 100%;
+        height: 100%;
+    }
+    .banner{
+        background-image: linear-gradient( to right, rgba(0, 0, 0, .2), rgba(5, 0, 0, 0.4));
+        width: 100%;
+        height:100%;
+    }
+    .txt h1{
+font-size: 2.5rem;
+transform: translateY(-12rem);
+
+    }
+    .txt h2{
+font-size: 1.3rem;
+transform: translateY(-12rem);
+
+    }
+    .menu ul {
+        flex-direction: column;
+        margin: 4%;
+        display: none;
+    }
+    .menu ul.active {   
+        display: flex;
+    }
+   
+    .toogle {
+        display: block;
+    }
+    .logo {
+        /* justify-content: center; */
+        margin: 0 auto;
+        
+    }
+}

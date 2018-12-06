@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="/iziModal-master/css/iziModal.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <title> Checkpoint</title>
+</head>
+
+<body>
+    <header>
+        <div id="modal-Cadastrar" data-iziModal-fullscreen="true" data-iziModal-title="Cadastrar"
+            data-iziModal-subtitle="Carfel" data-iziModal-icon="icon-home">
+            <form action="/Usuario/Cadastrar" method="POST"></form>
+            <div class="campos-cadastrar">
+                <div class="md-cadastrar">
+                    <input class="nm" type="text" placeholder="Nome">
+                    <input class="pss" type="password" placeholder="Senha">
+                    <input class="em" type="email" placeholder="Email">
+                    <input type="date" name="dataNascimento" />
+                </div>
+                <div class="lgn-cadastrar">
+                    <button><a class="canc" href="">Cancelar</a></button>
+                    <button><a href="">Entrar</a></button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+        <div id="modal-Login" data-iziModal-fullscreen="true" data-iziModal-title="Login" data-iziModal-subtitle="Carfel"
+            data-iziModal-icon="icon-home">
+            <form action="/Usuario/Login" method="POST"></form>
+            <div class="campos">
+                <div class="md">
+                    <input class="nm" type="text" placeholder="Nome">
+                    <input class="pss" type="password" placeholder="Senha">
+                </div>
+                <div class="lgn">
+                    <button><a class="canc" href="">Cancelar</a></button>
+                    <button><a href="">Entrar</a></button>
+                </div>
+                <div class="link">
+                    <p>Ainda não possui uma conta?<a href="#" data-izimodal-open="#modal-Cadastrar"
+                            data-iziModal-zindex="20000" data-izimodal-preventclose="#modal">Cadastre-se Aqui</a></p>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="banner">
+            <div class="top-bar">
+                <div class="logo">
+                    <img src="/imagens/logo.png" alt="Imagem do Logo Checkpoint">
+                </div>
+                <div class="toogle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="menu-r">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Catalogo">Catálogo</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Sobre">Sobre</a>
+                            </li>
+                            <li>
+                                <a href="/Home/ProdutosCarfel">Produtos Carfel</a>
+                            </li>
+                            <li>
+                                <a href="/Home/FaleConosco">Fale conosco</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Ajuda">Ajuda</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="txt">
+                <h1>SISTEMA CHECK POINT</h1>
+                <h2>A FERRAMENTA QUE VAI ALAVANCAR SEUS RESULTADOS!</h2>
+            </div>
+            <div class="bttn">
+                <div class="bt1">
+                    <a href="#" data-izimodal-open="#modal-Login" data-izimodal-transitionin="fadeInDown">Login</a>
+                    </a>
+                </div>
+                <div class="bt2">
+                    <a href="#" data-izimodal-open="#modal-Cadastrar" data-izimodal-transitionin="fadeInDown">Inscreva-se</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+    <footer>
+        <div class="ft1">
+            <img src="/imagens/footerimgjpeg.jpeg" alt="Imagem de um noebook e uma xicara de café em cima de uma mesa.">
+        </div>
+        <div class="ft2">
+            <img src="/imagens/logo.png" alt="Foto do logo da empresa">
+        </div>
+        <div class="info">
+            <div class="redes">
+                <h5>Siga-nos</h5>
+                <ul>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <a href="#">Insta</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-facebook-f"></i>
+                        <a href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <i class="fab fa-twitter"></i>
+                        <a href="#">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ctt">
+                <h5>Telefone</h5>
+                <p>+55 (11) 2138-4082</p>
+            </div>
+            <section class="maps">
+                <h5>Venha até nós</h5>
+
+                <div style='overflow:hidden;height:180px;width:300px;'>
+                    <div id='gmap_canvas' style='height:180px;width:300px;'></div>
+                    <small>
+                        <a href="http://www.googlemapsgenerator.com/fr">googlemapsgenerator FR</a>
+                    </small>
+                    <small>
+                        <a href="https://webtrafficgeeks.org/website-traffic/mlm-traffic/">WTG site</a>
+                    </small>
+                </div>
+        </div>
+        </section>
+        </div>
+
+    </footer>
+    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+    <script src="/iziModal-master/js/jquery.min.js"></script>
+    <script src="/iziModal-master/js/iziModal.min.js"></script>
+    <script type='text/javascript'>function init_map() { var myOptions = { zoom: 11, center: new google.maps.LatLng(-23.5363457, -46.645970199999965), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(-23.5363457, -46.645970199999965) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Chegar lá</strong><br>Al. Barão de Limeira, 530- Santa Cecília - São Paulo<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+    <script>
+        // $(document).ready(function () {
+        //     $('.toogle').click(function () {
+        //         alert("teste")
+        //         $('.menu-r').toogleClass('active');
+
+        //     });
+        // });
+
+        document.querySelector(".toogle").addEventListener('click', () => {
+            document.querySelector(".menu-r").classList.toggle("active");
+        });
+    </script>
+    <script>
+        $("#modal-Login").iziModal();
+        $("#modal-Cadastrar").iziModal();
+        var areaComentario = document.getElementById("areaComentario");
+
+        areaComentario.onfocus = () => {
+            if (areaComentario.innerText.length == 0) {
+                areaComentario.removeAttribute("placeholder");
+            }
+        };
+
+        areaComentario.onblur = () => {
+            if (areaComentario.innerText.length == 0) {
+                areaComentario.setAttribute("placeholder", "Escreva o comentário aqui");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
