@@ -11,12 +11,18 @@ namespace Senai.CheckPoint.Controllers {
         public ActionResult Cadastrar () {
             return View ();
         }
+        
+        
 
 [HttpPost]
         public ActionResult Cadastrar (IFormCollection form) {
             UsuarioModel usuario = new UsuarioModel ();
 
-            usuario.Id = System.IO.File.ReadAllLines ("usuarios.csv").Length + 1;
+            if (System.IO.File.Exists("usuarios.csv")){
+                usuario.Id = System.IO.File.ReadAllLines ("usuarios.csv").Length + 1;
+            } else {
+                usuario.Id = 1;
+            }
 
             usuario.Nome = form["Nome"];
             usuario.Email = form["Email"];
@@ -27,9 +33,9 @@ namespace Senai.CheckPoint.Controllers {
                 sw.WriteLine ($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};{usuario.DataNascimento}");
             }
 
-            ViewBag.Mensagem = "Usuário Cadastrado";
+            TempData["Mensagem"] = "Usuário Cadastrado";
 
-            return RedirectToAction ("Index");
+            return RedirectToAction ("Index", "Home");
         }
         [HttpGet]
         public IActionResult Login () {
@@ -54,16 +60,16 @@ namespace Senai.CheckPoint.Controllers {
 
                     if (dados[2] == usuario.Email && dados[3] == usuario.Senha) {
                         HttpContext.Session.SetString ("emailUsuario", usuario.Email);
-                        return RedirectToAction ("Cadastrar");
+                        return RedirectToAction ("Ajuda", "Home");
                     }
                 }
             }
 
-            ViewBag.Mensagem = "Usuário inválido";
+            TempData["Mensagem"] = "Usuário inválido";
 
-            return View ();
+           return RedirectToAction ("Index", "Home");
         }
-        
+         
 
         [HttpGet]
         public IActionResult Listar () {
@@ -152,7 +158,30 @@ namespace Senai.CheckPoint.Controllers {
 
                 }
             }
+        
             return View();
+            }
+        
+        [HttpPost]
+        public IActionResult Editar (IFormCollection form){
+            string[] linhas = System.IO.File.ReadAllLines("usuario.csv");
+
+            for (int i = 0; i < linhas.Length; i++)
+            {
+                if (string.IsNullOrEmpty(linhas[i])){
+                    continue;
+                }
+                string[] dados = linhas[i].Split (';');
+                
+                if (form["id"] == dados[0]){
+                    linhas[i] = $"{form ["id"]}, {form["nome"]}, {form["email"]}, {form["senha"]}, {form["dataNascimento"]}";
+                    break;
+                }
+            }
+            System.IO.File.WriteAllLines("usuario.csv", linhas);
+            return RedirectToAction("Listar");
+        
+        
         }
     }
 }

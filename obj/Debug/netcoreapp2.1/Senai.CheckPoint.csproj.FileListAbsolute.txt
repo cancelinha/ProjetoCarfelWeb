@@ -29,6 +29,6 @@ C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\De
 C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\Catalogo.g.cshtml.cs
 C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\Ajuda.g.cshtml.cs
-C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\FaleConosoco.g.cshtml.cs
 C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\ProdutosCarfel.g.cshtml.cs
 C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\Sobre.g.cshtml.cs
+C:\Users\48975462811\Desktop\Html & Css\CheckpointCarfel\Senai.CheckPoint\obj\Debug\netcoreapp2.1\Razor\Views\Home\FaleConosco.g.cshtml.cs

@@ -166,12 +166,13 @@ background-color: royalblue !important;
        margin-top: 4vw;
        font-size: .85rem;
    }
+   
 .lgn-cadastrar{
     margin: 1vw;
     text-align: center;
     height: 6vw;
 }
-.lgn-cadastrar a{
+.lgn-cadastrar input{
     border: none;
     
     text-decoration: none;
@@ -186,6 +187,7 @@ background-color: royalblue !important;
     text-transform: uppercase;
     
 }
+
                
 .lgn-cadastrar button{
    

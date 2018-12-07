@@ -1,23 +1,24 @@
 @{
-    ViewBag.Title = "Cadastrar Usuário";
-    Layout = "MasterPageDeslogado";
+ViewBag.Title = "Cadastrar Usuário";
+Layout = "MasterPageDeslogado";
 }
 <h1>Formulário de Cadastro</h1>
 @ViewBag.Mensagem
 <form action="/Usuario/Cadastrar" method="POST"></form>
-<div id="modal-Cadastrar" data-iziModal-fullscreen="true" data-iziModal-title="Cadastrar"
-data-iziModal-subtitle="Carfel" data-iziModal-icon="icon-home">
-<div class="campos-cadastrar">
-    <div class="md-cadastrar">
-        <input class="nm" type="text" placeholder="Nome">
-        <input class="pss" type="password" placeholder="Senha">
-        <input class="em" type="email" placeholder="Email">
-    </div>
-    <div class="lgn-cadastrar">
-        <button><a class="canc" href="">Cancelar</a></button>
-        <button><a href="">Entrar</a></button>
+<div id="modal-Cadastrar" data-iziModal-fullscreen="true" data-iziModal-title="Cadastrar" data-iziModal-subtitle="Carfel"
+    data-iziModal-icon="icon-home">
+    <div class="campos-cadastrar">
+        <div class="md-cadastrar">
+            <input class="nm" type="text" placeholder="Nome">
+            <input class="pss" type="password" placeholder="Senha">
+            <input class="em" type="email" placeholder="Email">
+        </div>
+        <div class="lgn-cadastrar">
+            <button><a class="canc" href="">Cancelar</a></button>
+            <input type="submit" value="Entrar">
+        </div>
     </div>
 </div>
 </div>
 
-    </form>
+</form>

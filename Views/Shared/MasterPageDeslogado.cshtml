@@ -16,39 +16,39 @@
     <header>
         <div id="modal-Cadastrar" data-iziModal-fullscreen="true" data-iziModal-title="Cadastrar"
             data-iziModal-subtitle="Carfel" data-iziModal-icon="icon-home">
-            <form action="/Usuario/Cadastrar" method="POST"></form>
-            <div class="campos-cadastrar">
-                <div class="md-cadastrar">
-                    <input class="nm" type="text" placeholder="Nome">
-                    <input class="pss" type="password" placeholder="Senha">
-                    <input class="em" type="email" placeholder="Email">
-                    <input type="date" name="dataNascimento" />
+            <form action="/Usuario/Cadastrar" method="POST">
+                <div class="campos-cadastrar">
+                    <div class="md-cadastrar">
+                        <input class="nm" name="Nome" type="text" placeholder="Nome">
+                        <input class="pss" name="Senha" type="password" placeholder="Senha">
+                        <input class="em" name="Email" type="email" placeholder="Email">
+                        <input type="date" name="dataNascimento" />
+                    </div>
+                    <div class="lgn-cadastrar">
+                        <button><a class="canc" href="">Cancelar</a></button>
+                        <input type="submit" value="Cadastrar" />
+                    </div>
                 </div>
-                <div class="lgn-cadastrar">
-                    <button><a class="canc" href="">Cancelar</a></button>
-                    <button><a href="">Entrar</a></button>
-                </div>
-            </div>
             </form>
         </div>
 
         <div id="modal-Login" data-iziModal-fullscreen="true" data-iziModal-title="Login" data-iziModal-subtitle="Carfel"
             data-iziModal-icon="icon-home">
-            <form action="/Usuario/Login" method="POST"></form>
-            <div class="campos">
-                <div class="md">
-                    <input class="nm" type="text" placeholder="Nome">
-                    <input class="pss" type="password" placeholder="Senha">
+            <form action="/Usuario/Login" method="POST">
+                <div class="campos">
+                    <div class="md">
+                        <input class="nm" name="Email" type="text" placeholder="Email">
+                        <input class="pss" name="Senha" type="password" placeholder="Senha">
+                    </div>
+                    <div class="lgn">
+                        <button><a class="canc" href="">Cancelar</a></button>
+                        <input type="submit" value="Enviar" />
+                     </div>
+                    <div class="link">
+                        <p>Ainda não possui uma conta?<a href="#" data-izimodal-open="#modal-Cadastrar"
+                                data-iziModal-zindex="20000" data-izimodal-preventclose="#modal">Cadastre-se Aqui</a></p>
+                    </div>
                 </div>
-                <div class="lgn">
-                    <button><a class="canc" href="">Cancelar</a></button>
-                    <button><a href="">Entrar</a></button>
-                </div>
-                <div class="link">
-                    <p>Ainda não possui uma conta?<a href="#" data-izimodal-open="#modal-Cadastrar"
-                            data-iziModal-zindex="20000" data-izimodal-preventclose="#modal">Cadastre-se Aqui</a></p>
-                </div>
-            </div>
             </form>
         </div>
         <div class="banner">
