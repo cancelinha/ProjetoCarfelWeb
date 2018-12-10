@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="iziModal-master/css/iziModal.min.css">
+<script src="iziModal-master/js/jquery.min.js"></script>
+<scrirpt src="iziModal-master/js/iziModal.min.js">
+</script>
+<link href="/css/login.css" rel="stylesheet" type="text/css" />
+<link href="/iziModal-master" rel="stylesheet" />
+
+@ViewBag.Mensagem
+
+<div id="modal-Cadastrar" data-iziModal-fullscreen="true" data-iziModal-title="Cadastrar" data-iziModal-subtitle="Carfel"
+    data-iziModal-icon="icon-home">
+    <form action="/Usuario/Cadastrar" method="POST">
+        <div class="campos-cadastrar">
+            <div class="md-cadastrar">
+                <input class="nm" name="Nome" type="text" placeholder="Nome">
+                <input class="em" name="Email" type="email" placeholder="Email">
+                <input class="pss" name="Senha" type="password" placeholder="Senha">
+            </div>
+            <div class="lgn-cadastrar">
+                <button><a class="canc" href="">Cancelar</a></button>
+                <input type="submit" value="Cadastrar">
+            </div>
+        </div>
+    </form>
+</div>

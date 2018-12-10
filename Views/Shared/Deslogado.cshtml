@@ -1,0 +1,25 @@
+@using Microsoft.AspNetCore.Http
+<link href="/css/login.css" rel="stylesheet" type="text/css" />
+<link href="/iziModal-master" rel="stylesheet" />
+<link rel="stylesheet" href="iziModal-master/css/iziModal.min.css">
+<script src="iziModal-master/js/jquery.min.js"></script>
+<scrirpt src="iziModal-master/js/iziModal.min.js">
+</script>
+
+@if(@Context.Session.GetString("nomeUsuario") != null){
+<div class="bttn">
+    <div class="bt1">
+        <a href="#" data-izimodal-open="#modal-Login" data-izimodal-transitionin="fadeInDown">Sair</a>
+    </div>
+    
+</div>
+} else{
+<div class="bttn">
+    <div class="bt1">
+        <a href="#" data-izimodal-open="#modal-Login" data-izimodal-transitionin="fadeInDown">Login</a>
+    </div>
+
+    <div class="bt2">
+        <a href="#" data-izimodal-open="#modal-Cadastrar" data-izimodal-transitionin="fadeInDown">Inscreva-se</a>
+    </div>
+</div>}

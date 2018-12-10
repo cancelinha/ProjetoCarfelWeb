@@ -11,10 +11,8 @@ namespace Senai.CheckPoint.Controllers {
         public ActionResult Cadastrar () {
             return View ();
         }
-        
-        
 
-[HttpPost]
+        [HttpPost]
         public ActionResult Cadastrar (IFormCollection form) {
             UsuarioModel usuario = new UsuarioModel ();
 
@@ -27,10 +25,10 @@ namespace Senai.CheckPoint.Controllers {
             usuario.Nome = form["Nome"];
             usuario.Email = form["Email"];
             usuario.Senha = form["Senha"];
-            usuario.DataNascimento = DateTime.Parse (form["dataNascimento"]);
+            // usuario.DataNascimento = DateTime.Parse (form["dataNascimento"]);
 
             using (StreamWriter sw = new StreamWriter ("usuarios.csv", true)) {
-                sw.WriteLine ($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};{usuario.DataNascimento}");
+                sw.WriteLine ($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha}");
             }
 
             TempData["Mensagem"] = "Usuário Cadastrado";
@@ -59,129 +57,18 @@ namespace Senai.CheckPoint.Controllers {
                     string[] dados = linha.Split (";");
 
                     if (dados[2] == usuario.Email && dados[3] == usuario.Senha) {
+                        
                         HttpContext.Session.SetString ("emailUsuario", usuario.Email);
-                        return RedirectToAction ("Ajuda", "Home");
+                        HttpContext.Session.SetString ("nomeUsuario", dados[1]);
+
+                        return Redirect ("/");
                     }
                 }
             }
 
             TempData["Mensagem"] = "Usuário inválido";
 
-           return RedirectToAction ("Index", "Home");
-        }
-         
-
-        [HttpGet]
-        public IActionResult Listar () {
-            List<UsuarioModel> lsUsuarios = new List<UsuarioModel> ();
-
-            string[] linhas = System.IO.File.ReadAllLines ("usuarios.csv");
-
-            UsuarioModel usuario;
-
-            foreach (var item in linhas) {
-
-                //Verifica se a linha é vazia
-                if (string.IsNullOrEmpty (item)) {
-                    //Retorna para o foreach
-                    continue;
-                }
-
-                string[] linha = item.Split (';');
-
-                usuario = new UsuarioModel ();
-
-                usuario.Id = int.Parse (linha[0]);
-                usuario.Nome = linha[1];
-                usuario.Email = linha[2];
-                usuario.Senha = linha[3];
-                usuario.DataNascimento = DateTime.Parse (linha[4]);
-
-                lsUsuarios.Add (usuario);
-
-            }
-
-            ViewData["Usuarios"] = lsUsuarios;
-
-            return View ();
-        }
-
-         [HttpGet]
-        public IActionResult Excluir (int id) {
-            //Pega os dados do arquivo usuario.csv
-            string[] linhas = System.IO.File.ReadAllLines ("usuarios.csv");
-
-            //Percorre as linhas do arquivo
-            for (int i = 0; i < linhas.Length; i++) {
-                //Separa as colunas da linha
-                string[] linha = linhas[i].Split (';');
-
-                //Verifica se o id da linha é o id passado
-                if (id.ToString () == linha[0]) {
-                    //Defino a linha como vazia
-                    linhas[i] = "";
-                    break;
-                }
-            }
-
-            //Armazeno no arquivo csv todas as linhas
-            System.IO.File.WriteAllLines ("usuarios.csv", linhas);
-
-            TempData["Mensagem"] = "Usuário excluído";
-
-            return RedirectToAction ("Listar");
-        }  
-        [HttpGet]
-        public IActionResult Editar(int id){
-
-            if (id == 0){
-                TempData["Mensagem"] = "Informe um usuário pra editar";
-                return View ("Listar");
-            }
-            
-            string[] linhas = System.IO.File.ReadAllLines("usuarios.csv");
-
-            foreach (var item in linhas)
-            {
-                string[] dados = item.Split(';');
-
-                if(id.ToString() == dados[0]){
-                    UsuarioModel usuario = new UsuarioModel();
-                    usuario.Id = int.Parse(dados[0]);
-                    usuario.Nome = dados[1];
-                    usuario.Email = dados[2];
-                    usuario.Senha = dados[3];
-                    usuario.DataNascimento = DateTime.Parse(dados[4]);
-
-                    ViewBag.Usuario = usuario;
-                    break;
-
-                }
-            }
-        
-            return View();
-            }
-        
-        [HttpPost]
-        public IActionResult Editar (IFormCollection form){
-            string[] linhas = System.IO.File.ReadAllLines("usuario.csv");
-
-            for (int i = 0; i < linhas.Length; i++)
-            {
-                if (string.IsNullOrEmpty(linhas[i])){
-                    continue;
-                }
-                string[] dados = linhas[i].Split (';');
-                
-                if (form["id"] == dados[0]){
-                    linhas[i] = $"{form ["id"]}, {form["nome"]}, {form["email"]}, {form["senha"]}, {form["dataNascimento"]}";
-                    break;
-                }
-            }
-            System.IO.File.WriteAllLines("usuario.csv", linhas);
-            return RedirectToAction("Listar");
-        
-        
-        }
+           return RedirectToAction ("Cadastrar", "Shared");
+        }        
     }
 }

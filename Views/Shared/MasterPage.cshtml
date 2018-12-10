@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Http
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,54 +12,56 @@
     <link href="/css/main.css" rel="stylesheet" type="text/css" />
     <title> Checkpoint</title>
 </head>
+
 <body>
-<div class="banner">
-        <div class="top-bar">
-            <div class="logo">
-                <img src="/imagens/logo.png" alt="Imagem do Logo Checkpoint">
+    <header>
+        @Html.Partial("Cadastrar")  
+        @Html.Partial("Login")
+        
+        
+        <div class="banner">
+            <div class="top-bar">
+                <div class="logo">
+                    <img src="/imagens/logo.png" alt="Imagem do Logo Checkpoint">
+                </div>
+                <div class="toogle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul class="menu-r">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Catalogo">Catálogo</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Sobre">Sobre</a>
+                            </li>
+                            <li>
+                                <a href="/Home/ProdutosCarfel">Produtos Carfel</a>
+                            </li>
+                            <li>
+                                <a href="/Home/FaleConosco">Fale conosco</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Ajuda">Ajuda</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="toogle">
-                <i class="fas fa-bars"></i>
+            <div class="txt">
+                <h1>SISTEMA CHECK POINT</h1>
+                <h2>A FERRAMENTA QUE VAI ALAVANCAR SEUS RESULTADOS!</h2>
             </div>
-            <div class="menu">
-                <nav>
-                    <ul class="menu-r">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/Home/Catalogo">Catálogo</a>
-                        </li>
-                        <li>
-                            <a href="/Home/Sobre">Sobre</a>
-                        </li>
-                        <li>
-                            <a href="/Home/ProdutosCarfel">Produtos Carfel</a>
-                        </li>
-                        <li>
-                            <a href="/Home/FaleConosco">Fale conosco</a>
-                        </li>
-                        <li>
-                            <a href="/Home/Ajuda">Ajuda</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            @Html.Partial("Deslogado")
         </div>
-        <div class="txt">
-            <h1>SISTEMA CHECK POINT</h1>
-            <h2>A FERRAMENTA QUE VAI ALAVANCAR SEUS RESULTADOS!</h2>
-        </div>
-        <div class="bttn">
-            <div class="bt1">
-                <a href="Home/index" >Sair</a>
-                </a>
-            </div>
-            
-        </div>
-    </div>
-</header>
-@RenderBody()
+
+    </header>
+
+    @RenderBody()
     <footer>
         <div class="ft1">
             <img src="/imagens/footerimgjpeg.jpeg" alt="Imagem de um noebook e uma xicara de café em cima de uma mesa.">
