@@ -114,7 +114,7 @@ header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: ghostwhite;
     font-size: 1.1rem;
-    text-decoration: none;
+    
     
 }
 
@@ -139,6 +139,29 @@ header {
     text-shadow: 0 3px 3px rgb(31, 14, 179);
 }
 
+.bt3{
+    
+    width: 7rem;
+    height: 2rem;
+    background-color: whitesmoke;
+    border-radius: 0.5rem;
+    margin-right: .2rem;
+    border: 1.5px solid royalblue;
+    
+}
+
+.bt3 a{
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: royalblue;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.bt3 a:hover {
+    text-shadow: 0 3px 3px royalblue;
+}
 #modal-Login .iziModal-header{
     background-color:rgb(89, 185, 240) !important;
 }

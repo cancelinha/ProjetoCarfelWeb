@@ -16,7 +16,7 @@ namespace Senai.CheckPoint.Controllers {
         public ActionResult Cadastrar (IFormCollection form) {
             UsuarioModel usuario = new UsuarioModel ();
 
-            if (System.IO.File.Exists("usuarios.csv")){
+            if (System.IO.File.Exists ("usuarios.csv")) {
                 usuario.Id = System.IO.File.ReadAllLines ("usuarios.csv").Length + 1;
             } else {
                 usuario.Id = 1;
@@ -35,11 +35,13 @@ namespace Senai.CheckPoint.Controllers {
 
             return RedirectToAction ("Index", "Home");
         }
+
         [HttpGet]
         public IActionResult Login () {
             return View ();
         }
-[HttpPost]
+
+        [HttpPost]
         public IActionResult Login (IFormCollection form) {
             UsuarioModel usuario = new UsuarioModel ();
             usuario.Email = form["Email"];
@@ -49,18 +51,17 @@ namespace Senai.CheckPoint.Controllers {
                 while (!sr.EndOfStream) {
                     var linha = sr.ReadLine ();
 
-                    if (string.IsNullOrEmpty(linha))
-                    {
+                    if (string.IsNullOrEmpty (linha)) {
                         continue;
                     }
 
                     string[] dados = linha.Split (";");
 
                     if (dados[2] == usuario.Email && dados[3] == usuario.Senha) {
-                        
+
                         HttpContext.Session.SetString ("emailUsuario", usuario.Email);
                         HttpContext.Session.SetString ("nomeUsuario", dados[1]);
-
+                        TempData["Mensagem"] = "Usuário Logado";
                         return Redirect ("/");
                     }
                 }
@@ -68,7 +69,36 @@ namespace Senai.CheckPoint.Controllers {
 
             TempData["Mensagem"] = "Usuário inválido";
 
-           return RedirectToAction ("Cadastrar", "Shared");
-        }        
+            return RedirectToAction ("/");
+        }
+
+            [HttpGet]
+        public IActionResult Logout () {
+            // HttpContext.Session.Clear();
+            // return Redirect("/");
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Logout (IFormCollection form) {
+            HttpContext.Session.Clear();
+            return Redirect("/");
+        }
+[HttpGet]
+        public ActionResult Comentarios () {
+            return View ();
+        }
+        [HttpPost]
+        public ActionResult Comentarios (IFormCollection form) {
+       ComentarioModel comments = new ComentarioModel ();
+       
+        using (StreamWriter sw = new StreamWriter ("comentarios.csv", true)) {
+               
+            }
+
+        TempData["Mensagem"] = "Comentário Efetuado";
+
+            return RedirectToAction ("Index", "Home");
+        }
+
     }
 }

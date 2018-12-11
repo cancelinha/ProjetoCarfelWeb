@@ -48,6 +48,10 @@
                             <li>
                                 <a href="/Home/Ajuda">Ajuda</a>
                             </li>
+                            <li> @if(@Context.Session.GetString("nomeUsuario") != null){
+                        <a name="logout" href="/Controllers/Usuario/Logout">Sair</a>
+                                }       
+                           </li>
                         </ul>
                     </nav>
                 </div>

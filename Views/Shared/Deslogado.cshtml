@@ -8,8 +8,10 @@
 
 @if(@Context.Session.GetString("nomeUsuario") != null){
 <div class="bttn">
-    <div class="bt1">
-        <a href="#" data-izimodal-open="#modal-Login" data-izimodal-transitionin="fadeInDown">Sair</a>
+    <div class="bt3">
+        @if(@Context.Session.GetString("nomeUsuario") != null){
+            <a name="logout" href="/Controllers/UsuarioController.cs/Logout">Sair</a>
+            }  
     </div>
     
 </div>
